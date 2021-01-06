@@ -38,8 +38,9 @@ public class AudioToTextBot extends TelegramLongPollingBot {
 
     @Override
     public void onUpdateReceived(Update update) {
-        String messageText = "default";
+        String messageText = "Отправьте пожалуйста аудиосообщения на казахском языке";
 
+        long startMs = System.currentTimeMillis();
         if (update.hasMessage() && update.getMessage().hasVoice()) {
             logger.info(String.format(">>>>>>>>>>> Time start: %s", new Date(System.currentTimeMillis())));
             messageText = onVoiceMessageAccepted(update);
