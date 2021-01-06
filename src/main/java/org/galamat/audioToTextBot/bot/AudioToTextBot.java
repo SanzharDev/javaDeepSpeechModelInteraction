@@ -83,8 +83,7 @@ public class AudioToTextBot extends TelegramLongPollingBot {
 
     private String requestDsModel(String oggFilePath) throws IOException {
         File oggFile = new File(oggFilePath);
-
-        HttpPost post = new HttpPost("http://192.168.88.234:8000/api/v1/stt");
+        HttpPost post = new HttpPost("http://192.168.88.224:8000/api/v1/stt");
 
         FileBody fileBody = new FileBody(oggFile, ContentType.DEFAULT_BINARY);
         MultipartEntityBuilder builder = MultipartEntityBuilder.create();
